@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_filter :authenticate, :except => [ :index, :show ]
   before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   # GET /reviews
@@ -71,4 +72,10 @@ class ReviewsController < ApplicationController
     def review_params
       params.require(:review).permit(:department, :category, :brand, :modelname, :price, :spec)
     end
+
+    def authenticate
+      authenticate_or_request_with_http_basic do |name, password|
+      name == "admin" && password == "Password@123@"
+    end
+  end
 end

@@ -20,6 +20,10 @@
     <%= f.select :category, ['Choose','Basketball Shoes','Running Shoes', 'Watch', 'Guitar', 'Bass Guitar'] %>
   </div>
   <div class="field">
+    <%= f.label :sub_category %><br>
+    <%= f.text_field :sub_category %>
+  </div>
+  <div class="field">
     <%= f.label :brand %><br>
 <!--     <!% if @category == 'Basketball Shoes' && 'Running Shoes' %>
     <!%= f.seleft :brand, ['Nike', 'Adidas','Reebok','Under Armour'] %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  department: MyString
+  category: MyString
+  brand: MyString
+  modelname: MyString
+  price: 9.99
+  spec: MyText
+
+two:
+  department: MyString
+  category: MyString
+  brand: MyString
+  modelname: MyString
+  price: 9.99
+  spec: MyText

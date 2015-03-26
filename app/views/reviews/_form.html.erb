@@ -1,0 +1,45 @@
+<%= form_for(@review) do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :department %><br>
+    <%= f.select :department, ['Choose','Sports', 'Music', 'Fashion'] %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.select :category, ['Choose','Basketball Shoes','Running Shoes', 'Watch', 'Guitar', 'Bass Guitar'] %>
+  </div>
+  <div class="field">
+    <%= f.label :brand %><br>
+<!--     <!% if @category == 'Basketball Shoes' && 'Running Shoes' %>
+    <!%= f.seleft :brand, ['Nike', 'Adidas','Reebok','Under Armour'] %>
+    <!% elsif @category == 'Watch' %> -->
+    <%= f.select :brand, ['Choose','Nike','Adidas','Reebok','Under Armour','Rolex', 'Casio'] %>
+    <!--% end %> -->
+  </div>
+  <div class="field">
+    <%= f.label :modelname %><br>
+    <%= f.text_field :modelname %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :spec %><br>
+    <%= f.text_area :spec %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
